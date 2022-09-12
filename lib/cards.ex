@@ -5,7 +5,6 @@ defmodule Cards do
 
 @doc """
   Creates a new deck.
-
 """
 
  def create_deck() do
@@ -19,14 +18,6 @@ defmodule Cards do
 
 @doc """
   Suffles a `deck`.
-
-## Exemples
-
-      iex> deck = Cards.create_deck
-      iex> shuffled_deck = Cards.shuffle(deck)
-      iex> shuffled_deck === deck
-      iex> true
-
 """
 
  def shuffle(deck) do
@@ -35,13 +26,6 @@ defmodule Cards do
 
 @doc """
   Check if there is a `card` in the `deck`.
-
-## Exemples
-
-      iex> deck = Cards.create_deck
-      iex> Cards.contains?(deck, "Ás de Zap")
-      iex> true
-
 """
 
  def contains?(deck, card) do
@@ -51,14 +35,6 @@ defmodule Cards do
 @doc """
   Divides a deck into a hand of cards and the rest.
   The `hand_size` argument indicates the number of cards of the hand.
-
-## Exemples
-
-      iex> deck = Cards.create_deck
-      iex> {hand, deck} = Cards.deal(deck, 1)
-      iex> hand
-      ["Ás de Ouros"]
-
 """
 
  def deal(deck, hand_size) do
@@ -67,7 +43,6 @@ defmodule Cards do
 
 @doc """
   Saves a deck in file named with `filename`
-
 """
 
  def save(deck, filename) do
@@ -77,7 +52,6 @@ defmodule Cards do
 
 @doc """
   Loads a deck from a file with the name `filename`.
-
 """
 
  def load(filename) do
@@ -87,6 +61,10 @@ defmodule Cards do
   end
  end
 
+@doc """
+  Creates a hand based on `hand_size`.
+"""
+ 
  def create_hand(hand_size) do
    Cards.create_deck
    |>Cards.shuffle
