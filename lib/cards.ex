@@ -8,11 +8,11 @@ defmodule Cards do
 """
 
  def create_deck() do
-   values = ["Ás", "Dois", "Tres", "Quatro", "Cinco", "Seis", "Sete", "Dama", "Valete", "Reis"]
-   suits = ["Ouros", "Espadas", "Zap", "Copas"]
+   values = ["Ace", "Two", "Three", "Four", "Five", "Six", "Seven", "Queen", "Jack", "King"]
+   suits = ["Hearts", "Spades", "Clubs", "Diamonds"]
 
    for suit <- suits, value <- values do
-    "#{value} de #{suit}"
+    "#{value} of #{suit}"
    end
  end
 
@@ -64,7 +64,7 @@ defmodule Cards do
 @doc """
   Creates a hand based on `hand_size`.
 """
- 
+
  def create_hand(hand_size) do
    Cards.create_deck
    |>Cards.shuffle
